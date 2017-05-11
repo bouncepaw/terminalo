@@ -33,11 +33,14 @@ for (var i = 0; i < lines.length; i++) {
   line.innerHTML = ""
 
   let button = document.createElement("button")
-  button.className = `terminalo__button terminalo__button_${i}`
+  button.className = "terminalo__button"
+  button.setAttribute("id", `terminalo__button_${i}`)
+  button.setAttribute("data-clipboard-target", `#terminalo__cmd_${i}`)
   button.innerHTML = terminaloCopy
 
   let cmd = document.createElement("span")
-  cmd.className = `terminalo__cmd terminalo__cmd_${i}`
+  cmd.className = "terminalo__cmd"
+  cmd.setAttribute("id", `terminalo__cmd_${i}`)
   cmd.innerHTML = command
 
   line.appendChild(button)
